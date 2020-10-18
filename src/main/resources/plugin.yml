@@ -41,6 +41,7 @@ permissions:
             powermining.craft.hammer.iron: true
             powermining.craft.hammer.gold: true
             powermining.craft.hammer.diamond: true
+            powermining.craft.hammer.netherite: true
 
     powermining.craft.hammer.wood:
         description: Allows players to craft the Wooden Hammer
@@ -56,6 +57,9 @@ permissions:
         default: false
     powermining.craft.hammer.diamond:
         description: Allows players to craft the Diamond Hammer
+        default: false
+    powermining.craft.hammer.netherite:
+        description: Allows players to craft the Netherite Hammer
         default: false
 
     powermining.craft.excavator.*:
@@ -73,6 +77,7 @@ permissions:
             powermining.craft.excavator.iron: true
             powermining.craft.excavator.gold: true
             powermining.craft.excavator.diamond: true
+            powermining.craft.excavator.netherite: true
 
     powermining.craft.excavator.wood:
         description: Allows players to craft the Wooden Excavator
@@ -88,6 +93,9 @@ permissions:
         default: false
     powermining.craft.excavator.diamond:
         description: Allows players to craft the Diamond Excavator
+        default: false
+    powermining.craft.excavator.netherite:
+        description: Allows players to craft the Netherite Excavator
         default: false
 
     powermining.use.*:
@@ -118,6 +126,7 @@ permissions:
             powermining.use.hammer.iron: true
             powermining.use.hammer.gold: true
             powermining.use.hammer.diamond: true
+            powermining.use.hammer.netherite: true
 
     powermining.use.hammer.wood:
         description: Allows players to use the Wooden Hammer
@@ -133,6 +142,9 @@ permissions:
         default: false
     powermining.use.hammer.diamond:
         description: Allows players to use the Diamond Hammer
+        default: false
+    powermining.use.hammer.netherite:
+        description: Allows players to use the Netherite Hammer
         default: false
 
     powermining.use.excavator.*:
@@ -150,6 +162,7 @@ permissions:
             powermining.use.excavator.iron: true
             powermining.use.excavator.gold: true
             powermining.use.excavator.diamond: true
+            powermining.use.excavator.netherite: true
 
     powermining.use.excavator.wood:
         description: Allows players to use the Wooden Excavator
@@ -165,6 +178,9 @@ permissions:
         default: false
     powermining.use.excavator.diamond:
         description: Allows players to use the Diamond Excavator
+        default: false
+    powermining.use.excavator.netherite:
+        description: Allows players to use the Netherite Excavator
         default: false
 
     powermining.enchant.*:
@@ -195,6 +211,7 @@ permissions:
             powermining.enchant.hammer.iron: true
             powermining.enchant.hammer.gold: true
             powermining.enchant.hammer.diamond: true
+            powermining.enchant.hammer.netherite: true
 
     powermining.enchant.hammer.wood:
         description: Allows players to enchant the Wooden Hammer
@@ -210,6 +227,9 @@ permissions:
         default: false
     powermining.enchant.hammer.diamond:
         description: Allows players to enchant the Diamond Hammer
+        default: false
+    powermining.enchant.hammer.netherite:
+        description: Allows players to enchant the Netherite Hammer
         default: false
 
     powermining.enchant.excavator.*:
@@ -227,6 +247,7 @@ permissions:
             powermining.enchant.excavator.iron: true
             powermining.enchant.excavator.gold: true
             powermining.enchant.excavator.diamond: true
+            powermining.enchant.excavator.netherite: true
 
     powermining.enchant.excavator.wood:
         description: Allows players to enchant the Wooden Excavator
@@ -242,4 +263,7 @@ permissions:
         default: false
     powermining.enchant.excavator.diamond:
         description: Allows players to enchant the Diamond Excavator
+        default: false
+    powermining.enchant.excavator.netherite:
+        description: Allows players to enchant the Netherite Excavator
         default: false

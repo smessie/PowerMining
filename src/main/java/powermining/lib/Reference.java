@@ -71,7 +71,8 @@ public class Reference {
 		Material.STONE_PICKAXE,
 		Material.IRON_PICKAXE,
 		Material.GOLDEN_PICKAXE,
-		Material.DIAMOND_PICKAXE
+		Material.DIAMOND_PICKAXE,
+		Material.NETHERITE_PICKAXE
 	));
 
 	public static ArrayList<Material> SPADES = new ArrayList<Material>(Arrays.asList(
@@ -79,6 +80,7 @@ public class Reference {
 		Material.STONE_SHOVEL,
 		Material.IRON_SHOVEL,
 		Material.GOLDEN_SHOVEL,
-		Material.DIAMOND_SHOVEL
+		Material.DIAMOND_SHOVEL,
+		Material.NETHERITE_SHOVEL
 	));
 }

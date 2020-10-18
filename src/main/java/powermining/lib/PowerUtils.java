@@ -258,6 +258,11 @@ public class PowerUtils {
 					canCraft = true;
 
 				break;
+			case NETHERITE_PICKAXE:
+				if (player.hasPermission("powermining.craft.hammer.netherite"))
+					canCraft = true;
+
+				break;
 			case WOODEN_SHOVEL:
 				if (player.hasPermission("powermining.craft.excavator.wood"))
 					canCraft = true;
@@ -280,6 +285,11 @@ public class PowerUtils {
 				break;
 			case DIAMOND_SHOVEL:
 				if (player.hasPermission("powermining.craft.excavator.diamond"))
+					canCraft = true;
+
+				break;
+			case NETHERITE_SHOVEL:
+				if (player.hasPermission("powermining.craft.excavator.netherite"))
 					canCraft = true;
 
 				break;
@@ -319,6 +329,11 @@ public class PowerUtils {
 					canUse = true;
 
 				break;
+			case NETHERITE_PICKAXE:
+				if (player.hasPermission("powermining.use.hammer.netherite"))
+					canUse = true;
+
+				break;
 			case WOODEN_SHOVEL:
 				if (player.hasPermission("powermining.use.excavator.wood"))
 					canUse = true;
@@ -341,6 +356,11 @@ public class PowerUtils {
 				break;
 			case DIAMOND_SHOVEL:
 				if (player.hasPermission("powermining.use.excavator.diamond"))
+					canUse = true;
+
+				break;
+			case NETHERITE_SHOVEL:
+				if (player.hasPermission("powermining.use.excavator.netherite"))
 					canUse = true;
 
 				break;
@@ -381,6 +401,11 @@ public class PowerUtils {
 					canEnchant = true;
 
 				break;
+			case NETHERITE_PICKAXE:
+				if (player.hasPermission("powermining.enchant.hammer.netherite"))
+					canEnchant = true;
+
+				break;
 			case WOODEN_SHOVEL:
 				if (player.hasPermission("powermining.enchant.excavator.wood"))
 					canEnchant = true;
@@ -403,6 +428,11 @@ public class PowerUtils {
 				break;
 			case DIAMOND_SHOVEL:
 				if (player.hasPermission("powermining.enchant.excavator.diamond"))
+					canEnchant = true;
+
+				break;
+			case NETHERITE_SHOVEL:
+				if (player.hasPermission("powermining.enchant.excavator.netherite"))
 					canEnchant = true;
 
 				break;
