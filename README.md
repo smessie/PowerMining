@@ -7,7 +7,7 @@ These were inspired by mDiyo's Tinker's Construct items of the same name.
 <br />
 
 ## Notable updates
-Following updates were added by me (smessie) since I continued this plugin:
+Following updates were added by me ([smessie](https://github.com/smessie)) since I continued this plugin:
 - Support for Netherite tools were added.
 
 <br />
