@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>powermining</groupId>
+    <artifactId>PowerMining</artifactId>
+    <version>19.0.0</version>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.14.4-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <artifactId>GriefPrevention</artifactId>
+            <groupId>me.ryanhamshire.GriefPrevention</groupId>
+            <scope>system</scope>
+            <version>latest</version>
+            <systemPath>${basedir}/lib/GriefPrevention.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <artifactId>Questioner</artifactId>
+            <groupId>ca.xshade</groupId>
+            <scope>system</scope>
+            <version>latest</version>
+            <systemPath>${basedir}/lib/Questioner.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <artifactId>Towny</artifactId>
+            <groupId>com.palmergames</groupId>
+            <scope>system</scope>
+            <version>latest</version>
+            <systemPath>${basedir}/lib/Towny.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <artifactId>TownyChat</artifactId>
+            <groupId>com.palmergames.bukkit.TownyChat</groupId>
+            <scope>system</scope>
+            <version>latest</version>
+            <systemPath>${basedir}/lib/TownyChat.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <artifactId>TownyNameUpdater</artifactId>
+            <groupId>backcab.TownyNameUpdater</groupId>
+            <scope>system</scope>
+            <version>latest</version>
+            <systemPath>${basedir}/lib/TownyNameUpdater.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <artifactId>Worldguard</artifactId>
+            <groupId>com.sk89q.worldguard</groupId>
+            <scope>system</scope>
+            <version>latest</version>
+            <systemPath>${basedir}/lib/worldguard-6.2.1.jar</systemPath>
+        </dependency>
+    </dependencies>
+    
+</project>
