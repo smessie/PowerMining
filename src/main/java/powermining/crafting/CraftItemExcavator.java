@@ -29,12 +29,14 @@ public class CraftItemExcavator {
 	ItemStack IronExcavator = new ItemStack(Material.IRON_SHOVEL, 1);
 	ItemStack GoldExcavator = new ItemStack(Material.GOLDEN_SHOVEL, 1);
 	ItemStack DiamondExcavator = new ItemStack(Material.DIAMOND_SHOVEL, 1);
+	ItemStack NetheriteExcavator = new ItemStack(Material.NETHERITE_SHOVEL, 1);
 
 	ShapedRecipe WoodExcavatorRecipe;
 	ShapedRecipe StoneExcavatorRecipe;
 	ShapedRecipe IronExcavatorRecipe;
 	ShapedRecipe GoldExcavatorRecipe;
 	ShapedRecipe DiamondExcavatorRecipe;
+	ShapedRecipe NetheriteExcavatorRecipe;
 
 	public CraftItemExcavator(JavaPlugin plugin) {
 		this.plugin = plugin;
@@ -51,6 +53,7 @@ public class CraftItemExcavator {
 		ItemMeta IronExcavatorMeta = IronExcavator.getItemMeta();
 		ItemMeta GoldExcavatorMeta = GoldExcavator.getItemMeta();
 		ItemMeta DiamondExcavatorMeta = DiamondExcavator.getItemMeta();
+		ItemMeta NetheriteExcavatorMeta = NetheriteExcavator.getItemMeta();
 
 		ArrayList<String> lore = new ArrayList<String>();
 		lore.add(loreString);
@@ -60,18 +63,21 @@ public class CraftItemExcavator {
 		IronExcavatorMeta.setDisplayName("Iron Excavator");
 		GoldExcavatorMeta.setDisplayName("Golden Excavator");
 		DiamondExcavatorMeta.setDisplayName("Diamond Excavator");
+		NetheriteExcavatorMeta.setDisplayName("Netherite Excavator");
 
 		WoodExcavatorMeta.setLore(lore);
 		StoneExcavatorMeta.setLore(lore);
 		IronExcavatorMeta.setLore(lore);
 		GoldExcavatorMeta.setLore(lore);
 		DiamondExcavatorMeta.setLore(lore);
+		NetheriteExcavatorMeta.setLore(lore);
 
 		WoodExcavator.setItemMeta(WoodExcavatorMeta);
 		StoneExcavator.setItemMeta(StoneExcavatorMeta);
 		IronExcavator.setItemMeta(IronExcavatorMeta);
 		GoldExcavator.setItemMeta(GoldExcavatorMeta);
 		DiamondExcavator.setItemMeta(DiamondExcavatorMeta);
+		NetheriteExcavator.setItemMeta(NetheriteExcavatorMeta);
 	}
 
 	// Creates the ShapedRecipe patterns for all excavator types
@@ -81,6 +87,7 @@ public class CraftItemExcavator {
 		IronExcavatorRecipe = new ShapedRecipe(IronExcavator);
 		GoldExcavatorRecipe = new ShapedRecipe(GoldExcavator);
 		DiamondExcavatorRecipe = new ShapedRecipe(DiamondExcavator);
+		NetheriteExcavatorRecipe = new ShapedRecipe(NetheriteExcavator);
 
 		WoodExcavatorRecipe.shape(" m ", "mim", " m ");
 		WoodExcavatorRecipe.setIngredient('m', Material.LEGACY_LOG);
@@ -101,6 +108,10 @@ public class CraftItemExcavator {
 		DiamondExcavatorRecipe.shape(" m ", "mim", " m ");
 		DiamondExcavatorRecipe.setIngredient('m', Material.DIAMOND);
 		DiamondExcavatorRecipe.setIngredient('i', Material.DIAMOND_SHOVEL);
+
+		NetheriteExcavatorRecipe.shape(" m ", "mim", " m ");
+		NetheriteExcavatorRecipe.setIngredient('m', Material.NETHERITE_INGOT);
+		NetheriteExcavatorRecipe.setIngredient('i', Material.NETHERITE_SHOVEL);
 	}
 
 	// Registers all created recipes into the game
@@ -110,5 +121,6 @@ public class CraftItemExcavator {
 		plugin.getServer().addRecipe(IronExcavatorRecipe);
 		plugin.getServer().addRecipe(GoldExcavatorRecipe);
 		plugin.getServer().addRecipe(DiamondExcavatorRecipe);
+		plugin.getServer().addRecipe(NetheriteExcavatorRecipe);
 	}
 }

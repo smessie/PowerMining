@@ -60,6 +60,7 @@ public class InventoryClickListener implements Listener {
 			case IRON_INGOT:
 			case GOLD_INGOT:
 			case DIAMOND:
+			case NETHERITE_INGOT:
 				return;
 			default:
 				break;

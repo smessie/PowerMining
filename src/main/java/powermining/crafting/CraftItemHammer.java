@@ -29,12 +29,14 @@ public class CraftItemHammer {
 	ItemStack IronHammer = new ItemStack(Material.IRON_PICKAXE, 1);
 	ItemStack GoldHammer = new ItemStack(Material.GOLDEN_PICKAXE, 1);
 	ItemStack DiamondHammer = new ItemStack(Material.DIAMOND_PICKAXE, 1);
+	ItemStack NetheriteHammer = new ItemStack(Material.NETHERITE_PICKAXE, 1);
 
 	ShapedRecipe WoodHammerRecipe;
 	ShapedRecipe StoneHammerRecipe;
 	ShapedRecipe IronHammerRecipe;
 	ShapedRecipe GoldHammerRecipe;
 	ShapedRecipe DiamondHammerRecipe;
+	ShapedRecipe NetheriteHammerRecipe;
 
 	public CraftItemHammer(JavaPlugin plugin) {
 		this.plugin = plugin;
@@ -51,6 +53,7 @@ public class CraftItemHammer {
 		ItemMeta IronHammerMeta = IronHammer.getItemMeta();
 		ItemMeta GoldHammerMeta = GoldHammer.getItemMeta();
 		ItemMeta DiamondHammerMeta = DiamondHammer.getItemMeta();
+		ItemMeta NetheriteHammerMeta = NetheriteHammer.getItemMeta();
 
 		ArrayList<String> lore = new ArrayList<String>();
 		lore.add(loreString);
@@ -60,18 +63,21 @@ public class CraftItemHammer {
 		IronHammerMeta.setDisplayName("Iron Hammer");
 		GoldHammerMeta.setDisplayName("Golden Hammer");
 		DiamondHammerMeta.setDisplayName("Diamond Hammer");
+		NetheriteHammerMeta.setDisplayName("Netherite Hammer");
 
 		WoodHammerMeta.setLore(lore);
 		StoneHammerMeta.setLore(lore);
 		IronHammerMeta.setLore(lore);
 		GoldHammerMeta.setLore(lore);
 		DiamondHammerMeta.setLore(lore);
+		NetheriteHammerMeta.setLore(lore);
 
 		WoodHammer.setItemMeta(WoodHammerMeta);
 		StoneHammer.setItemMeta(StoneHammerMeta);
 		IronHammer.setItemMeta(IronHammerMeta);
 		GoldHammer.setItemMeta(GoldHammerMeta);
 		DiamondHammer.setItemMeta(DiamondHammerMeta);
+		NetheriteHammer.setItemMeta(NetheriteHammerMeta);
 	}
 
 	// Creates the ShapedRecipe patterns for all hammer types
@@ -81,6 +87,7 @@ public class CraftItemHammer {
 		IronHammerRecipe = new ShapedRecipe(IronHammer);
 		GoldHammerRecipe = new ShapedRecipe(GoldHammer);
 		DiamondHammerRecipe = new ShapedRecipe(DiamondHammer);
+		NetheriteHammerRecipe = new ShapedRecipe(NetheriteHammer);
 
 		WoodHammerRecipe.shape(" m ", "mim", " m ");
 		WoodHammerRecipe.setIngredient('m', Material.LEGACY_LOG);
@@ -101,6 +108,10 @@ public class CraftItemHammer {
 		DiamondHammerRecipe.shape(" m ", "mim", " m ");
 		DiamondHammerRecipe.setIngredient('m', Material.DIAMOND);
 		DiamondHammerRecipe.setIngredient('i', Material.DIAMOND_PICKAXE);
+
+		NetheriteHammerRecipe.shape(" m ", "mim", " m ");
+		NetheriteHammerRecipe.setIngredient('m', Material.NETHERITE_INGOT);
+		NetheriteHammerRecipe.setIngredient('i', Material.NETHERITE_PICKAXE);
 	}
 
 	// Registers all created recipes into the game
@@ -110,5 +121,6 @@ public class CraftItemHammer {
 		plugin.getServer().addRecipe(IronHammerRecipe);
 		plugin.getServer().addRecipe(GoldHammerRecipe);
 		plugin.getServer().addRecipe(DiamondHammerRecipe);
+		plugin.getServer().addRecipe(NetheriteHammerRecipe);
 	}
 }
