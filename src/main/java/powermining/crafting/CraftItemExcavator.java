@@ -13,8 +13,10 @@
 package powermining.crafting;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -55,15 +57,16 @@ public class CraftItemExcavator {
 		ItemMeta DiamondExcavatorMeta = DiamondExcavator.getItemMeta();
 		ItemMeta NetheriteExcavatorMeta = NetheriteExcavator.getItemMeta();
 
-		ArrayList<String> lore = new ArrayList<String>();
+		ArrayList<String> lore = new ArrayList<>();
 		lore.add(loreString);
 
-		WoodExcavatorMeta.setDisplayName("Wooden Excavator");
-		StoneExcavatorMeta.setDisplayName("Stone Excavator");
-		IronExcavatorMeta.setDisplayName("Iron Excavator");
-		GoldExcavatorMeta.setDisplayName("Golden Excavator");
-		DiamondExcavatorMeta.setDisplayName("Diamond Excavator");
-		NetheriteExcavatorMeta.setDisplayName("Netherite Excavator");
+		// A NullPointerException when one of the metaData's is null is fine, because they shouldn't be null.
+		Objects.requireNonNull(WoodExcavatorMeta).setDisplayName("Wooden Excavator");
+		Objects.requireNonNull(StoneExcavatorMeta).setDisplayName("Stone Excavator");
+		Objects.requireNonNull(IronExcavatorMeta).setDisplayName("Iron Excavator");
+		Objects.requireNonNull(GoldExcavatorMeta).setDisplayName("Golden Excavator");
+		Objects.requireNonNull(DiamondExcavatorMeta).setDisplayName("Diamond Excavator");
+		Objects.requireNonNull(NetheriteExcavatorMeta).setDisplayName("Netherite Excavator");
 
 		WoodExcavatorMeta.setLore(lore);
 		StoneExcavatorMeta.setLore(lore);
@@ -82,12 +85,12 @@ public class CraftItemExcavator {
 
 	// Creates the ShapedRecipe patterns for all excavator types
 	public void setRecipes() {
-		WoodExcavatorRecipe = new ShapedRecipe(WoodExcavator);
-		StoneExcavatorRecipe = new ShapedRecipe(StoneExcavator);
-		IronExcavatorRecipe = new ShapedRecipe(IronExcavator);
-		GoldExcavatorRecipe = new ShapedRecipe(GoldExcavator);
-		DiamondExcavatorRecipe = new ShapedRecipe(DiamondExcavator);
-		NetheriteExcavatorRecipe = new ShapedRecipe(NetheriteExcavator);
+		WoodExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "WoodExcavator"), WoodExcavator);
+		StoneExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "StoneExcavator"), StoneExcavator);
+		IronExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "IronExcavator"), IronExcavator);
+		GoldExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "GoldExcavator"), GoldExcavator);
+		DiamondExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "DiamondExcavator"), DiamondExcavator);
+		NetheriteExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "NetheriteExcavator"), NetheriteExcavator);
 
 		WoodExcavatorRecipe.shape(" m ", "mim", " m ");
 		WoodExcavatorRecipe.setIngredient('m', Material.LEGACY_LOG);

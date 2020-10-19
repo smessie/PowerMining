@@ -16,7 +16,7 @@ import powermining.PowerMining;
 import powermining.listeners.EnchantItemListener;
 
 public class EnchantItemHandler {
-	public EnchantItemHandler() {};
+	public EnchantItemHandler() {}
 	public EnchantItemListener listener;
 
 	public void Init(PowerMining plugin) {

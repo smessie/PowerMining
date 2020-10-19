@@ -75,7 +75,7 @@ public final class PowerMining extends JavaPlugin {
 
 	public void processConfig() {
 		try {
-			for (Object x : (ArrayList<?>) getConfig().getList("Minable")) {
+			for (Object x : getConfig().getList("Minable")) {
 				LinkedHashMap<String, ArrayList> l = (LinkedHashMap<String, ArrayList>)x;
 
 				for (String blockType: l.keySet()) {
@@ -95,8 +95,7 @@ public final class PowerMining extends JavaPlugin {
 						if (hammerType.equals("any"))
 							temp = null;
 
-						if (hammerType != null && (Material.getMaterial(hammerType) == null ||
-								(temp != null && temp.contains(Material.getMaterial(hammerType)))))
+						if (Material.getMaterial(hammerType) == null || temp != null && temp.contains(Material.getMaterial(hammerType)))
 							continue;
 
 						if (temp != null)

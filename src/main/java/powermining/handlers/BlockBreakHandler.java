@@ -16,7 +16,7 @@ import powermining.PowerMining;
 import powermining.listeners.BlockBreakListener;
 
 public class BlockBreakHandler {
-	public BlockBreakHandler() {};
+	public BlockBreakHandler() {}
 	public BlockBreakListener listener;
 
 	public void Init(PowerMining plugin) {

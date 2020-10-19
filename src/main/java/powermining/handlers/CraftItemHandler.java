@@ -18,7 +18,7 @@ import powermining.crafting.CraftItemHammer;
 import powermining.listeners.CraftItemListener;
 
 public class CraftItemHandler {
-	public CraftItemHandler() {};
+	public CraftItemHandler() {}
 	public CraftItemHammer HammerClass;
 	public CraftItemExcavator ExcavatorClass;
 	public CraftItemListener listener;

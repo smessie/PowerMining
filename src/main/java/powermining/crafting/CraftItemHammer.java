@@ -13,8 +13,10 @@
 package powermining.crafting;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -55,15 +57,16 @@ public class CraftItemHammer {
 		ItemMeta DiamondHammerMeta = DiamondHammer.getItemMeta();
 		ItemMeta NetheriteHammerMeta = NetheriteHammer.getItemMeta();
 
-		ArrayList<String> lore = new ArrayList<String>();
+		ArrayList<String> lore = new ArrayList<>();
 		lore.add(loreString);
 
-		WoodHammerMeta.setDisplayName("Wooden Hammer");
-		StoneHammerMeta.setDisplayName("Stone Hammer");
-		IronHammerMeta.setDisplayName("Iron Hammer");
-		GoldHammerMeta.setDisplayName("Golden Hammer");
-		DiamondHammerMeta.setDisplayName("Diamond Hammer");
-		NetheriteHammerMeta.setDisplayName("Netherite Hammer");
+		// A NullPointerException when one of the metaData's is null is fine, because they shouldn't be null.
+		Objects.requireNonNull(WoodHammerMeta).setDisplayName("Wooden Hammer");
+		Objects.requireNonNull(StoneHammerMeta).setDisplayName("Stone Hammer");
+		Objects.requireNonNull(IronHammerMeta).setDisplayName("Iron Hammer");
+		Objects.requireNonNull(GoldHammerMeta).setDisplayName("Golden Hammer");
+		Objects.requireNonNull(DiamondHammerMeta).setDisplayName("Diamond Hammer");
+		Objects.requireNonNull(NetheriteHammerMeta).setDisplayName("Netherite Hammer");
 
 		WoodHammerMeta.setLore(lore);
 		StoneHammerMeta.setLore(lore);
@@ -82,12 +85,12 @@ public class CraftItemHammer {
 
 	// Creates the ShapedRecipe patterns for all hammer types
 	public void setRecipes() {
-		WoodHammerRecipe = new ShapedRecipe(WoodHammer);
-		StoneHammerRecipe = new ShapedRecipe(StoneHammer);
-		IronHammerRecipe = new ShapedRecipe(IronHammer);
-		GoldHammerRecipe = new ShapedRecipe(GoldHammer);
-		DiamondHammerRecipe = new ShapedRecipe(DiamondHammer);
-		NetheriteHammerRecipe = new ShapedRecipe(NetheriteHammer);
+		WoodHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "WoodHammer"), WoodHammer);
+		StoneHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "StoneHammer"), StoneHammer);
+		IronHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "IronHammer"), IronHammer);
+		GoldHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "GoldHammer"), GoldHammer);
+		DiamondHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "DiamondHammer"), DiamondHammer);
+		NetheriteHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "NetheriteHammer"), NetheriteHammer);
 
 		WoodHammerRecipe.shape(" m ", "mim", " m ");
 		WoodHammerRecipe.setIngredient('m', Material.LEGACY_LOG);

@@ -8,10 +8,7 @@
 
 package powermining.lib;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import powermining.PowerMining;
 import powermining.crafting.CraftItemExcavator;
@@ -36,7 +33,8 @@ public class PowerUtils {
 		if (item == null || !item.hasItemMeta())
 			return false;
 
-		List<String> lore = item.getItemMeta().getLore();
+		// This should not throw a NullPointerException because hasItemMeta is checked above.
+		List<String> lore = Objects.requireNonNull(item.getItemMeta()).getLore();
 
 		if (lore == null)
 			return false;
