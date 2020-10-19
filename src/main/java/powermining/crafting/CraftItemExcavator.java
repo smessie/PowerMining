@@ -15,6 +15,7 @@ package powermining.crafting;
 import java.util.ArrayList;
 
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -82,12 +83,12 @@ public class CraftItemExcavator {
 
 	// Creates the ShapedRecipe patterns for all excavator types
 	public void setRecipes() {
-		WoodExcavatorRecipe = new ShapedRecipe(WoodExcavator);
-		StoneExcavatorRecipe = new ShapedRecipe(StoneExcavator);
-		IronExcavatorRecipe = new ShapedRecipe(IronExcavator);
-		GoldExcavatorRecipe = new ShapedRecipe(GoldExcavator);
-		DiamondExcavatorRecipe = new ShapedRecipe(DiamondExcavator);
-		NetheriteExcavatorRecipe = new ShapedRecipe(NetheriteExcavator);
+		WoodExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "WoodExcavator"), WoodExcavator);
+		StoneExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "StoneExcavator"), StoneExcavator);
+		IronExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "IronExcavator"), IronExcavator);
+		GoldExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "GoldExcavator"), GoldExcavator);
+		DiamondExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "DiamondExcavator"), DiamondExcavator);
+		NetheriteExcavatorRecipe = new ShapedRecipe(new NamespacedKey(plugin, "NetheriteExcavator"), NetheriteExcavator);
 
 		WoodExcavatorRecipe.shape(" m ", "mim", " m ");
 		WoodExcavatorRecipe.setIngredient('m', Material.LEGACY_LOG);

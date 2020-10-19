@@ -15,6 +15,7 @@ package powermining.crafting;
 import java.util.ArrayList;
 
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -82,12 +83,12 @@ public class CraftItemHammer {
 
 	// Creates the ShapedRecipe patterns for all hammer types
 	public void setRecipes() {
-		WoodHammerRecipe = new ShapedRecipe(WoodHammer);
-		StoneHammerRecipe = new ShapedRecipe(StoneHammer);
-		IronHammerRecipe = new ShapedRecipe(IronHammer);
-		GoldHammerRecipe = new ShapedRecipe(GoldHammer);
-		DiamondHammerRecipe = new ShapedRecipe(DiamondHammer);
-		NetheriteHammerRecipe = new ShapedRecipe(NetheriteHammer);
+		WoodHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "WoodHammer"), WoodHammer);
+		StoneHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "StoneHammer"), StoneHammer);
+		IronHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "IronHammer"), IronHammer);
+		GoldHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "GoldHammer"), GoldHammer);
+		DiamondHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "DiamondHammer"), DiamondHammer);
+		NetheriteHammerRecipe = new ShapedRecipe(new NamespacedKey(plugin, "NetheriteHammer"), NetheriteHammer);
 
 		WoodHammerRecipe.shape(" m ", "mim", " m ");
 		WoodHammerRecipe.setIngredient('m', Material.LEGACY_LOG);
