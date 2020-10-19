@@ -13,6 +13,7 @@
 package powermining.crafting;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -56,15 +57,16 @@ public class CraftItemHammer {
 		ItemMeta DiamondHammerMeta = DiamondHammer.getItemMeta();
 		ItemMeta NetheriteHammerMeta = NetheriteHammer.getItemMeta();
 
-		ArrayList<String> lore = new ArrayList<String>();
+		ArrayList<String> lore = new ArrayList<>();
 		lore.add(loreString);
 
-		WoodHammerMeta.setDisplayName("Wooden Hammer");
-		StoneHammerMeta.setDisplayName("Stone Hammer");
-		IronHammerMeta.setDisplayName("Iron Hammer");
-		GoldHammerMeta.setDisplayName("Golden Hammer");
-		DiamondHammerMeta.setDisplayName("Diamond Hammer");
-		NetheriteHammerMeta.setDisplayName("Netherite Hammer");
+		// A NullPointerException when one of the metaData's is null is fine, because they shouldn't be null.
+		Objects.requireNonNull(WoodHammerMeta).setDisplayName("Wooden Hammer");
+		Objects.requireNonNull(StoneHammerMeta).setDisplayName("Stone Hammer");
+		Objects.requireNonNull(IronHammerMeta).setDisplayName("Iron Hammer");
+		Objects.requireNonNull(GoldHammerMeta).setDisplayName("Golden Hammer");
+		Objects.requireNonNull(DiamondHammerMeta).setDisplayName("Diamond Hammer");
+		Objects.requireNonNull(NetheriteHammerMeta).setDisplayName("Netherite Hammer");
 
 		WoodHammerMeta.setLore(lore);
 		StoneHammerMeta.setLore(lore);

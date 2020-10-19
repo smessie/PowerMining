@@ -13,6 +13,7 @@
 package powermining.crafting;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -56,15 +57,16 @@ public class CraftItemExcavator {
 		ItemMeta DiamondExcavatorMeta = DiamondExcavator.getItemMeta();
 		ItemMeta NetheriteExcavatorMeta = NetheriteExcavator.getItemMeta();
 
-		ArrayList<String> lore = new ArrayList<String>();
+		ArrayList<String> lore = new ArrayList<>();
 		lore.add(loreString);
 
-		WoodExcavatorMeta.setDisplayName("Wooden Excavator");
-		StoneExcavatorMeta.setDisplayName("Stone Excavator");
-		IronExcavatorMeta.setDisplayName("Iron Excavator");
-		GoldExcavatorMeta.setDisplayName("Golden Excavator");
-		DiamondExcavatorMeta.setDisplayName("Diamond Excavator");
-		NetheriteExcavatorMeta.setDisplayName("Netherite Excavator");
+		// A NullPointerException when one of the metaData's is null is fine, because they shouldn't be null.
+		Objects.requireNonNull(WoodExcavatorMeta).setDisplayName("Wooden Excavator");
+		Objects.requireNonNull(StoneExcavatorMeta).setDisplayName("Stone Excavator");
+		Objects.requireNonNull(IronExcavatorMeta).setDisplayName("Iron Excavator");
+		Objects.requireNonNull(GoldExcavatorMeta).setDisplayName("Golden Excavator");
+		Objects.requireNonNull(DiamondExcavatorMeta).setDisplayName("Diamond Excavator");
+		Objects.requireNonNull(NetheriteExcavatorMeta).setDisplayName("Netherite Excavator");
 
 		WoodExcavatorMeta.setLore(lore);
 		StoneExcavatorMeta.setLore(lore);
